@@ -4,9 +4,9 @@ def derivative(x):
     d = [a_i - b_i for a_i, b_i in zip(a, b)]
     return d
 
+
 def find_max_idx(x):
-    max_val, max_idx = max((val, idx) for (idx, val) in enumerate(x))
-    # any faster or cleaner way to do this?
+    max_idx = x.index(max((x)))
     # returns first value if duplicate, which should be fine for the current application
     return max_idx
 
