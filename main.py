@@ -1,7 +1,7 @@
 import os
-from file_import import *
-from file_export import *
+from file_import import file_import
 from process_data import process_data
+from file_export import file_export
 
 
 def main():
@@ -12,6 +12,7 @@ def main():
 
     file_out = 'plate.csv'
     file_export(well_names, all_max_idx, file_out)
+
 
 if __name__ == '__main__':
     main()

@@ -3,7 +3,7 @@ import csv
 
 def file_export(well_names, max_derivative_cycles, file_out):
     # better way to expand lists here with `sum` and `zip`?...
-    expanded_well_names = []
+    expanded_well_names = []  # repeating well names per channel to create pairs for data entry
     well_idx = []
     for i in range(len(well_names)):
         expanded_well_names.extend([well_names[i] for _ in range(len(max_derivative_cycles[0]))])
