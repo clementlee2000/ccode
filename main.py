@@ -5,10 +5,14 @@ from file_export import file_export
 
 
 if __name__ == '__main__':
-    file_in = os.path.join("data", "plate.json")  # hardcoded here but expected to be passed from upstream
-    [well_names, raw_data] = file_import(file_in)
+    try:
+        file_in = os.path.join("data", "plate.json")  # hardcoded here but expected to be passed from upstream
+        [well_names, raw_data] = file_import(file_in)
+        # check here if file_import returned none
 
-    all_max_idx = process_data(raw_data)
+        all_max_idx = process_data(raw_data)
 
-    file_out = 'plate.csv'
-    file_export(well_names, all_max_idx, file_out)
+        file_out = 'plate.csv'
+        file_export(well_names, all_max_idx, file_out)
+    except Exception as e:
+        raise e
